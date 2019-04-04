@@ -13,14 +13,22 @@
 
 function ShoppingList() {
   this.groceries = [];
-}
+};
 
 ShoppingList.prototype.addItem = function (item) {
   this.groceries = this.groceries.concat([item]);
-}
-
+};
+ShoppingList.prototype.removeItem = function (item) {
+  this.groceries = this.groceries.filter(function (grocery) {
+    return item !== grocery;
+  });
+};
 var myList = new ShoppingList();
 
 myList.addItem('Banana');
+myList.addItem('Bread');
 
 console.log(myList.groceries);
+
+myList.removeItem('Banana');
+console.log(myList.groceries)
