@@ -11,24 +11,24 @@
 // platformBrowserDynamic().bootstrapModule(AppModule)
 //   .catch(err => console.error(err));
 
-function ShoppingList() {
-  this.groceries = [];
-};
+class ShoppingList {
+  groceries: string[];
+  constructor() {
+    this.groceries = []
+  }
 
-ShoppingList.prototype.addItem = function (item) {
-  this.groceries = this.groceries.concat([item]);
-};
-ShoppingList.prototype.removeItem = function (item) {
-  this.groceries = this.groceries.filter(function (grocery) {
-    return item !== grocery;
-  });
-};
-var myList = new ShoppingList();
+  addItem(item) {
+    this.groceries = [...this.groceries, item];
+  }
 
-myList.addItem('Banana');
+  removeItem(item) {
+    this.groceries = this.groceries.filter((grocery) => item !== grocery);
+  }
+}
+
+const myList = new ShoppingList();
+
 myList.addItem('Bread');
+myList.addItem('Pizza');
 
 console.log(myList.groceries);
-
-myList.removeItem('Banana');
-console.log(myList.groceries)
