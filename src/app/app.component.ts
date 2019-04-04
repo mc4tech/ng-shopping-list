@@ -8,3 +8,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ng-shopping-list';
 }
+
+// const ShoppingList = () => {
+//   this.groceries = [];
+// }
+
+// ShoppingList.prototype.addItem = (item) => {
+//   this.groceries = this.groceries.concat([item]);
+// }
+
+// const myList = new ShoppingList();
+
+// myList.addItem('Banana');
+
+// console.log(myList.groceries);
